@@ -54,8 +54,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  opacity: 0;
-  animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+  opacity: 1;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s backwards;
 }
 
 .name {
@@ -134,8 +134,8 @@
 .modelCol {
   position: relative;
   height: 520px;
-  opacity: 0;
-  animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+  opacity: 1;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.65s backwards;
 }
 
 /* ── Keyframes ── */

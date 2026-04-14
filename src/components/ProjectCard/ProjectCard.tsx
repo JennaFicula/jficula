@@ -60,10 +60,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             className={styles.linkedinLink}
-            aria-label={`View ${title} on LinkedIn`}
+            aria-label={`View ${title} article`}
             onClick={(e) => e.stopPropagation()}
           >
-            View on LinkedIn →
+            {linkedinUrl.includes('linkedin') ? 'View on LinkedIn →' : 'Read Article →'}
           </a>
         )}
       </div>

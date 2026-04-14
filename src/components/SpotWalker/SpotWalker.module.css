@@ -1,5 +1,96 @@
 .wrap {
   position: absolute;
   inset: 0;
+}
+
+/* Full-page overlay while walk mode is active */
+.wrapWalk {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
   pointer-events: none;
+}
+
+/* ── Walk toggle button ── */
+.walkBtn {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  pointer-events: auto;
+}
+
+.walkBtn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.walkBtnActive {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+/* When the walk wrap is full-page, pin the button to viewport bottom */
+.walkBtnFixed {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Arrow key hint shown while walk mode is active ── */
+.walkHint {
+  position: fixed;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Good boy toast ── */
+.toast {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: toastAnim 1.8s ease forwards;
+}
+
+@keyframes toastAnim {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  18%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  65%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-8px); }
 }

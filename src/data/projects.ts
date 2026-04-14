@@ -85,7 +85,7 @@ The technical stack brought together Boston Dynamics Spot SDK and APIs for robot
 
 The outcome was that defect identification that previously required manual visual inspection got fully automated — reducing the time from production to quality flag significantly, improving worker safety, and giving the client complete traceability across the manufacturing line.`,
     tags: ["Robotics", "Industrial AI", "Private 5G", "Computer Vision"],
-    linkedinUrl: "https://www.linkedin.com/posts/stevesaundersmbe_...",
+    linkedinUrl: "https://www.ericsson.com/en/blog/2024/6/smart-factory-inspections-with-private-5g",
     images: ["/media/spot-1.webp", "/media/spot-2.jpg", "/media/spot-3.jpeg"],
     captionedImages: [
       { src: "/media/teleop-dash.png", caption: "SPOT Mission Control Dashboard — teleoperation interface used to monitor and control robot deployment across the rail factory floor." },
