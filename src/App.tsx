@@ -36,6 +36,21 @@ function HomePage() {
             view={view}
             setView={setView}
           />
+          {/* Mobile-only compact header — hidden on desktop via CSS */}
+          <div className="mobileHeader">
+            <span className="mobileHeaderName">{profile.name}</span>
+            <div className="mobileHeaderNav">
+              <button className="mobileHeaderBack" onClick={() => setView('landing')}>← Home</button>
+              <button
+                className={`mobileHeaderTab${view === 'work' ? ' mobileHeaderTabActive' : ''}`}
+                onClick={() => setView('work')}
+              >Projects</button>
+              <button
+                className={`mobileHeaderTab${view === 'resume' ? ' mobileHeaderTabActive' : ''}`}
+                onClick={() => setView('resume')}
+              >Experience</button>
+            </div>
+          </div>
           <div className="mainCol">
             {view === 'work' && (
               <>
