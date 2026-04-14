@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# Jenna Ficula — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site built with React 18 + TypeScript, featuring a cinematic landing page, interactive 3D Boston Dynamics Spot model, and project/experience showcases.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- **React 18** + **TypeScript** (Create React App)
+- **CSS Modules** — dark grey page background with light panels
+- **Three.js** / **@react-three/fiber** / **@react-three/drei** — 3D GLTF model with PBR rendering and mouse-tracking rotation
+- **react-router-dom** — client-side routing
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Cinematic hero banner with Ken Burns animation and gradient bleed
+- Interactive 3D Boston Dynamics Spot robot (mouse-controlled rotation)
+- Projects section with full-screen detail modal and media galleries
+- Experience section with roles, internships, education, and skills
+- Sidebar navigation with bio, LinkedIn link, and section tabs
+- Dark-themed outer layout with light card panels
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+```bash
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open [http://localhost:3000](http://localhost:3000) to view locally.
 
-### `npm run build`
+## Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Notes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Large media assets (`public/media/`, 3D model files, PDF resume) are excluded from the repository via `.gitignore` due to file size. Add them locally or configure Git LFS to track them for deployment.
