@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import styles from './SpotWalker.module.css';
 
-const MODEL_URL = '/media/spotboston_dynamic_high_poly/scene.gltf';
+const MODEL_URL = 'https://github.com/JennaFicula/jficula/releases/download/v1.0/scene.gltf';
 const TARGET_HEIGHT = 2.4;
 // 135° + 40° = 175°
 const BASE_ROT_Y = (175 * Math.PI) / 180;
