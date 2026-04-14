@@ -22,3 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 fix_resume.py
+
+# Large media files (host separately or use Git LFS)
+public/media/
+src/media/
+public/Jenna_Ficula_2026_Solutions.pdf
