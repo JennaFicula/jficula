@@ -1,0 +1,20 @@
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border: 1px solid #000000;
+  border-radius: 999px;
+  color: #000000;
+  background: #ffffff;
+  white-space: nowrap;
+}

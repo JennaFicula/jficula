@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spot(Boston Dynamic) High Poly
+* source:	https://sketchfab.com/3d-models/spotboston-dynamic-high-poly-058b16a8c88047e18b1f081e0d15f883
+* author:	Julliani (https://sketchfab.com/Julliani)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spot(Boston Dynamic) High Poly" (https://sketchfab.com/3d-models/spotboston-dynamic-high-poly-058b16a8c88047e18b1f081e0d15f883) by Julliani (https://sketchfab.com/Julliani) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,25 +1,80 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Sidebar from './components/Sidebar/Sidebar';
+import ProjectCard from './components/ProjectCard/ProjectCard';
+import ProjectDetail from './components/ProjectDetail/ProjectDetail';
+import ResumeSection from './components/ResumeSection/ResumeSection';
+import LandingHero from './components/LandingHero/LandingHero';
+import Footer from './components/Footer/Footer';
+import { profile } from './data/content';
+import { projects, Project } from './data/projects';
+
+type View = 'landing' | 'work' | 'resume';
+
+function HomePage() {
+  const [selected, setSelected] = useState<Project | null>(null);
+  const [view, setView] = useState<View>('landing');
+
+  return (
+    <>
+      {view === 'landing' ? (
+        <div className="landingPage">
+          <LandingHero
+            onSelect={setView}
+            name={profile.name}
+            bio={profile.bio}
+            linkedin={profile.linkedin}
+          />
+        </div>
+      ) : (
+        <div className="pageLayout">
+          <Sidebar
+            name={profile.name}
+            bio={profile.bio}
+            linkedin={profile.linkedin}
+            view={view}
+            setView={setView}
+          />
+          <div className="mainCol">
+            {view === 'work' && (
+              <>
+                <h2 className="pageHeading">Projects</h2>
+                <p className="projectsCaption">Check out some things I have been working on</p>
+                <section aria-label="Projects" className="projects">
+                  {projects.map((p) => (
+                    <ProjectCard key={p.title} {...p} onClick={() => setSelected(p)} />
+                  ))}
+                </section>
+              </>
+            )}
+
+            {view === 'resume' && (
+              <>
+                <h2 className="pageHeading">Career</h2>
+                <p className="projectsCaption">Check out my work</p>
+                <ResumeSection pdfUrl={profile.resume} />
+              </>
+            )}
+
+            <Footer location={profile.location} availability={profile.availability} />
+          </div>
+        </div>
+      )}
+      {selected && (
+        <ProjectDetail project={selected} onClose={() => setSelected(null)} />
+      )}
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
