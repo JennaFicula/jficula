@@ -7,12 +7,16 @@ interface SidebarProps {
   linkedin: string;
   view: 'work' | 'resume';
   setView: (v: 'landing' | 'work' | 'resume') => void;
+  onClose?: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ name, bio, linkedin, view, setView }) => {
+const Sidebar: React.FC<SidebarProps> = ({ name, bio, linkedin, view, setView, onClose }) => {
   const [mainBio, location] = bio.split('\n').map(s => s.trim()).filter(Boolean);
   return (
     <aside className={styles.card}>
+      {onClose && (
+        <button className={styles.closeBtn} onClick={onClose} aria-label="Close bio">×</button>
+      )}
       <img src="/media/me.png" alt={name} className={styles.avatar} />
       <h1 className={styles.name}>{name}</h1>
       <div className={styles.bioBlock}>

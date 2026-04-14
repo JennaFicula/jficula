@@ -15,6 +15,7 @@ type View = 'landing' | 'work' | 'resume';
 function HomePage() {
   const [selected, setSelected] = useState<Project | null>(null);
   const [view, setView] = useState<View>('landing');
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(true);
 
   return (
     <>
@@ -29,28 +30,32 @@ function HomePage() {
         </div>
       ) : (
         <div className="pageLayout">
-          <Sidebar
-            name={profile.name}
-            bio={profile.bio}
-            linkedin={profile.linkedin}
-            view={view}
-            setView={setView}
-          />
-          {/* Mobile-only compact header — hidden on desktop via CSS */}
-          <div className="mobileHeader">
-            <span className="mobileHeaderName">{profile.name}</span>
-            <div className="mobileHeaderNav">
-              <button className="mobileHeaderBack" onClick={() => setView('landing')}>← Home</button>
-              <button
-                className={`mobileHeaderTab${view === 'work' ? ' mobileHeaderTabActive' : ''}`}
-                onClick={() => setView('work')}
-              >Projects</button>
-              <button
-                className={`mobileHeaderTab${view === 'resume' ? ' mobileHeaderTabActive' : ''}`}
-                onClick={() => setView('resume')}
-              >Experience</button>
+          {mobileSidebarOpen && (
+            <Sidebar
+              name={profile.name}
+              bio={profile.bio}
+              linkedin={profile.linkedin}
+              view={view}
+              setView={(v) => { setView(v); if (v === 'landing') setMobileSidebarOpen(true); }}
+              onClose={() => setMobileSidebarOpen(false)}
+            />
+          )}
+          {!mobileSidebarOpen && (
+            <div className="mobileHeader">
+              <button className="mobileHeaderBack" onClick={() => setMobileSidebarOpen(true)}>☰ Bio</button>
+              <div className="mobileHeaderNav">
+                <button className="mobileHeaderBack" onClick={() => setView('landing')}>← Home</button>
+                <button
+                  className={`mobileHeaderTab${view === 'work' ? ' mobileHeaderTabActive' : ''}`}
+                  onClick={() => setView('work')}
+                >Projects</button>
+                <button
+                  className={`mobileHeaderTab${view === 'resume' ? ' mobileHeaderTabActive' : ''}`}
+                  onClick={() => setView('resume')}
+                >Experience</button>
+              </div>
             </div>
-          </div>
+          )}
           <div className="mainCol">
             {view === 'work' && (
               <>

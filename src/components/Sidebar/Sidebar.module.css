@@ -11,6 +11,33 @@
   background: #f5f5f5;
 }
 
+/* X close button — hidden on desktop, shown only on mobile */
+.closeBtn {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .closeBtn {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: rgba(0,0,0,0.4);
+    cursor: pointer;
+    padding: 0;
+  }
+  .closeBtn:hover {
+    color: #000;
+  }
+  .card {
+    position: relative;
+  }
+}
+
 .avatar {
   width: 100%;
   height: auto;
